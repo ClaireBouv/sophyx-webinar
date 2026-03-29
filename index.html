@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Why AI Can't Find Your Business — and the 3-Step Fix | Sophyx</title>
+  <meta name="description" content="A free live session with Claire Bouvier, founder of Sophyx. Learn why businesses with strong Google rankings are invisible to AI — and what to do about it." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #FFFFFF;
+      --fg: #0D0F10;
+      --muted: #545659;
+      --accent: #2EC4B6;
+      --accent-light: #E8FAF8;
+      --secondary: #F5F5F5;
+      --border: #E6E6E6;
+      --radius: 8px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 32px;
+    }
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+    .nav-logo {
+      font-weight: 600;
+      font-size: 18px;
+      color: var(--fg);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+    }
+    .nav-logo span { color: var(--accent); }
+    .nav-cta {
+      background: var(--accent);
+      color: #fff;
+      padding: 10px 24px;
+      border-radius: 100px;
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+    .nav-cta:hover {
+      box-shadow: 0 8px 24px rgba(46,196,182,0.25);
+      transform: translateY(-1px);
+    }
+
+    /* HERO */
+    .hero {
+      padding: 96px 32px 80px;
+      background: linear-gradient(135deg, #FFFFFF 0%, #F0FCFB 100%);
+      border-bottom: 1px solid var(--border);
+      text-align: center;
+    }
+    .hero-inner { max-width: 780px; margin: 0 auto; }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent-light);
+      color: var(--accent);
+      border: 1px solid rgba(46,196,182,0.3);
+      border-radius: 100px;
+      padding: 6px 16px;
+      font-size: 13px;
+      font-weight: 500;
+      margin-bottom: 32px;
+    }
+    .badge-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.85); }
+    }
+
+    h1 {
+      font-size: clamp(36px, 5vw, 56px);
+      font-weight: 600;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--fg);
+      margin-bottom: 24px;
+    }
+    h1 em {
+      font-style: normal;
+      color: var(--accent);
+    }
+
+    .hero-sub {
+      font-size: 18px;
+      color: var(--muted);
+      line-height: 1.6;
+      max-width: 580px;
+      margin: 0 auto 40px;
+    }
+
+    .hero-meta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+    .meta-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      color: var(--muted);
+      font-weight: 500;
+    }
+    .meta-icon {
+      width: 32px;
+      height: 32px;
+      background: var(--accent-light);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent);
+      color: #fff;
+      padding: 16px 40px;
+      border-radius: 100px;
+      font-size: 16px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+    .btn-primary:hover {
+      box-shadow: 0 12px 32px rgba(46,196,182,0.3);
+      transform: translateY(-2px);
+    }
+    .btn-arrow { font-size: 18px; }
+
+    /* STATS BAR */
+    .stats {
+      background: var(--fg);
+      padding: 40px 32px;
+    }
+    .stats-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      text-align: center;
+    }
+    .stat-number {
+      font-size: 40px;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: -0.02em;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .stat-label {
+      font-size: 14px;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.4;
+    }
+
+    /* PROBLEM */
+    .problem {
+      padding: 96px 32px;
+      background: var(--bg);
+    }
+    .problem-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .section-label {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+    h2 {
+      font-size: clamp(26px, 3.5vw, 36px);
+      font-weight: 600;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      color: var(--fg);
+      margin-bottom: 20px;
+    }
+    .body-text {
+      font-size: 16px;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .proof-card {
+      background: var(--secondary);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+    }
+    .proof-card-title {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 20px;
+    }
+    .proof-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .proof-item:last-child { border-bottom: none; }
+    .proof-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      margin-top: 6px;
+      flex-shrink: 0;
+    }
+    .proof-dot.red { background: #EF4444; }
+    .proof-company { font-size: 14px; font-weight: 500; color: var(--fg); }
+    .proof-result { font-size: 13px; color: var(--muted); margin-top: 2px; }
+
+    /* LEARN */
+    .learn {
+      padding: 96px 32px;
+      background: var(--secondary);
+    }
+    .learn-inner { max-width: 1100px; margin: 0 auto; }
+    .learn-header { text-align: center; margin-bottom: 56px; }
+    .learn-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+    .learn-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+      transition: border-color 0.3s ease;
+    }
+    .learn-card:hover { border-color: rgba(46,196,182,0.4); }
+    .learn-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--accent-light);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+    .learn-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--fg);
+      margin-bottom: 10px;
+    }
+    .learn-desc {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ABOUT */
+    .about {
+      padding: 96px 32px;
+      background: var(--bg);
+    }
+    .about-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .about-photo {
+      width: 100%;
+      aspect-ratio: 4/5;
+      border-radius: 20px;
+      background: var(--secondary);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .about-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+    }
+    .photo-placeholder {
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+      padding: 32px;
+    }
+    .photo-placeholder-icon { font-size: 48px; margin-bottom: 12px; }
+    .about-name {
+      font-size: 28px;
+      font-weight: 600;
+      color: var(--fg);
+      margin-bottom: 4px;
+    }
+    .about-title {
+      font-size: 15px;
+      color: var(--accent);
+      font-weight: 500;
+      margin-bottom: 24px;
+    }
+    .about-bio {
+      font-size: 16px;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+    .cred-list {
+      list-style: none;
+      margin-top: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .cred-list li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+    .cred-check {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--accent-light);
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    /* REGISTER */
+    .register {
+      padding: 96px 32px;
+      background: linear-gradient(135deg, #F0FCFB 0%, #FFFFFF 100%);
+      border-top: 1px solid var(--border);
+    }
+    .register-inner { max-width: 720px; margin: 0 auto; }
+    .register-header { text-align: center; margin-bottom: 48px; }
+    .register-header p {
+      font-size: 17px;
+      color: var(--muted);
+      margin-top: 16px;
+    }
+    .tally-wrap {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 48px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.04);
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--fg);
+      padding: 40px 32px;
+      text-align: center;
+    }
+    .footer-logo {
+      font-size: 18px;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+    .footer-logo span { color: var(--accent); }
+    .footer-text {
+      font-size: 13px;
+      color: rgba(255,255,255,0.4);
+    }
+    .footer-link {
+      color: rgba(255,255,255,0.4);
+      text-decoration: none;
+    }
+    .footer-link:hover { color: var(--accent); }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .stats-inner { grid-template-columns: 1fr; gap: 24px; }
+      .problem-inner { grid-template-columns: 1fr; gap: 40px; }
+      .learn-grid { grid-template-columns: 1fr; }
+      .about-inner { grid-template-columns: 1fr; gap: 40px; }
+      .about-photo { max-width: 280px; margin: 0 auto; }
+      .tally-wrap { padding: 28px 20px; }
+      .hero-meta { gap: 16px; }
+      nav { padding: 0 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="https://sophyx.io" class="nav-logo">Sophyx<span>.</span></a>
+    <a href="#register" class="nav-cta">Reserve my spot</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="badge">
+      <span class="badge-dot"></span>
+      Free Live Webinar
+    </div>
+
+    <h1>Why AI Can't Find<br />Your Business —<br /><em>and the 3-Step Fix</em></h1>
+
+    <p class="hero-sub">
+      ChatGPT, Perplexity, and Claude are recommending your competitors.
+      Most businesses with strong Google rankings have no idea this is happening.
+      This session changes that.
+    </p>
+
+    <div class="hero-meta">
+      <div class="meta-item">
+        <div class="meta-icon">📅</div>
+        <span>Every Thursday starting April 30, 2026</span>
+      </div>
+      <div class="meta-item">
+        <div class="meta-icon">🕑</div>
+        <span>2:00 PM EST · 45 minutes</span>
+      </div>
+      <div class="meta-item">
+        <div class="meta-icon">💸</div>
+        <span>Completely free</span>
+      </div>
+    </div>
+
+    <a href="#register" class="btn-primary">
+      Reserve my spot <span class="btn-arrow">→</span>
+    </a>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats">
+  <div class="stats-inner">
+    <div>
+      <div class="stat-number">65%</div>
+      <div class="stat-label">of searches now end<br />without a click</div>
+    </div>
+    <div>
+      <div class="stat-number">9/10</div>
+      <div class="stat-label">top-ranked businesses<br />invisible to AI engines</div>
+    </div>
+    <div>
+      <div class="stat-number">3</div>
+      <div class="stat-label">steps to go from<br />invisible to cited</div>
+    </div>
+  </div>
+</div>
+
+<!-- PROBLEM -->
+<section class="problem">
+  <div class="problem-inner">
+    <div>
+      <p class="section-label">The Problem</p>
+      <h2>Strong SEO doesn't mean AI can find you</h2>
+      <p class="body-text">
+        For years, ranking on Google meant customers could find you. That playbook is breaking down.
+        AI tools now answer questions directly — and they're pulling from a completely different set of signals.
+      </p>
+      <p class="body-text">
+        This isn't a technical SEO problem. It's an <strong>Interpretation Gap</strong> — AI doesn't understand your authority,
+        relevance, or trustworthiness the way Google does. And most businesses have no idea it's happening.
+      </p>
+    </div>
+
+    <div class="proof-card">
+      <p class="proof-card-title">Real businesses. Top Google rankings. AI invisible.</p>
+
+      <div class="proof-item">
+        <div class="proof-dot red"></div>
+        <div>
+          <div class="proof-company">Silverback Strategies</div>
+          <div class="proof-result">#1 on Google for "best Google Ads agency" — not mentioned by ChatGPT or Gemini</div>
+        </div>
+      </div>
+      <div class="proof-item">
+        <div class="proof-dot red"></div>
+        <div>
+          <div class="proof-company">ActionCoach of Arizona</div>
+          <div class="proof-result">Top-ranked business coach — invisible when the same query went to AI</div>
+        </div>
+      </div>
+      <div class="proof-item">
+        <div class="proof-dot red"></div>
+        <div>
+          <div class="proof-company">Boostability</div>
+          <div class="proof-result">Leading SEO consultancy — not cited by ChatGPT or Gemini for core keywords</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT YOU'LL LEARN -->
+<section class="learn">
+  <div class="learn-inner">
+    <div class="learn-header">
+      <p class="section-label">What You'll Learn</p>
+      <h2>45 minutes. No fluff. Real answers.</h2>
+    </div>
+    <div class="learn-grid">
+      <div class="learn-card">
+        <div class="learn-icon">🔍</div>
+        <div class="learn-title">Why strong SEO no longer means AI visibility</div>
+        <div class="learn-desc">Understand exactly why the signals that work on Google are different from what AI engines use to decide who to recommend.</div>
+      </div>
+      <div class="learn-card">
+        <div class="learn-icon">🧩</div>
+        <div class="learn-title">How to diagnose your own Interpretation Gap</div>
+        <div class="learn-desc">Walk through the exact audit process Claire uses with clients — you'll be able to run this on your own business in minutes.</div>
+      </div>
+      <div class="learn-card">
+        <div class="learn-icon">⚡</div>
+        <div class="learn-title">The exact fixes that get you cited by AI</div>
+        <div class="learn-desc">Not theory. Specific, prioritised actions — the same Citation Recovery Plan Sophyx generates for every audit.</div>
+      </div>
+      <div class="learn-card">
+        <div class="learn-icon">📊</div>
+        <div class="learn-title">A live look inside a real AI visibility audit</div>
+        <div class="learn-desc">Claire will walk through a live audit so you can see exactly what AI engines see — and don't see — about a real business.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT CLAIRE -->
+<section class="about">
+  <div class="about-inner">
+    <div class="about-photo" id="claire-photo">
+      <!-- Replace the placeholder below with: <img src="YOUR_PHOTO_URL" alt="Claire Bouvier" /> -->
+      <div class="photo-placeholder">
+        <div class="photo-placeholder-icon">📸</div>
+        <p>Add your photo here</p>
+      </div>
+    </div>
+    <div>
+      <p class="section-label">Your Host</p>
+      <div class="about-name">Claire Bouvier</div>
+      <div class="about-title">Founder, Sophyx · AI Visibility Strategist</div>
+      <p class="about-bio">
+        Claire built Sophyx after noticing a pattern: businesses doing everything right online were still being ignored by AI.
+        She's since trained 5,000+ business owners on AI strategy and built the platform that tells you exactly what's broken
+        — and how to fix it in minutes, not months.
+      </p>
+      <p class="about-bio">
+        Her approach: direct, proof-heavy, no hype. If she's sharing something, it works.
+      </p>
+      <ul class="cred-list">
+        <li><span class="cred-check">✓</span>Trained 5,000+ businesses on AI strategy</li>
+        <li><span class="cred-check">✓</span>Recognized in Canada's Startup Ecosystem via Invest Ottawa</li>
+        <li><span class="cred-check">✓</span>Founder of Sophyx — the AI visibility platform</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- REGISTER -->
+<section class="register" id="register">
+  <div class="register-inner">
+    <div class="register-header">
+      <p class="section-label">Save Your Spot</p>
+      <h2>Reserve your free seat</h2>
+      <p>Spots are limited. Takes 30 seconds.</p>
+    </div>
+    <div class="tally-wrap">
+      <iframe
+        data-tally-src="https://tally.so/r/xX2WWr"
+        loading="lazy"
+        width="100%"
+        height="500"
+        frameborder="0"
+        marginheight="0"
+        marginwidth="0"
+        title="Webinar Registration — Why AI Can't Find Your Business">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Sophyx<span>.</span></div>
+  <p class="footer-text">
+    © 2026 Sophyx · <a href="https://sophyx.io" class="footer-link">sophyx.io</a>
+  </p>
+</footer>
+
+<script async src="https://tally.so/widgets/embed.js"></script>
+
+</body>
+</html>
