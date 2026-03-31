@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>You're Registered! | Sophyx Webinar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #FFFFFF;
+      --fg: #0D0F10;
+      --muted: #545659;
+      --accent: #2EC4B6;
+      --accent-light: #E8FAF8;
+      --secondary: #F5F5F5;
+      --border: #E6E6E6;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 32px 24px;
+      -webkit-font-smoothing: antialiased;
+    }
+    .card {
+      max-width: 520px;
+      width: 100%;
+      text-align: center;
+    }
+    .check {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: var(--accent-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 28px;
+    }
+    .check svg { width: 32px; height: 32px; }
+    .logo {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--fg);
+      letter-spacing: -0.01em;
+      margin-bottom: 40px;
+    }
+    .logo span { color: var(--accent); }
+    h1 {
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      color: var(--fg);
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+    .subtitle {
+      font-size: 17px;
+      color: var(--muted);
+      margin-bottom: 36px;
+      line-height: 1.6;
+    }
+    .details-box {
+      background: var(--secondary);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px;
+      margin-bottom: 32px;
+      text-align: left;
+    }
+    .details-box h3 {
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+    .detail-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 15px;
+    }
+    .detail-row:last-child { border-bottom: none; }
+    .detail-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: var(--accent-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+    .detail-label { font-weight: 600; color: var(--fg); }
+    .detail-value { color: var(--muted); font-size: 14px; margin-top: 2px; }
+    .email-note {
+      background: var(--accent-light);
+      border: 1px solid rgba(46,196,182,0.25);
+      border-radius: 12px;
+      padding: 16px 20px;
+      font-size: 14px;
+      color: var(--fg);
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+    .email-note strong { color: var(--accent); }
+    .host-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 20px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      margin-bottom: 32px;
+      text-align: left;
+    }
+    .host-photo {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 2px solid var(--border);
+      flex-shrink: 0;
+    }
+    .host-photo img { width: 100%; height: 100%; object-fit: cover; }
+    .host-name { font-weight: 600; font-size: 15px; }
+    .host-title { font-size: 13px; color: var(--muted); margin-top: 2px; }
+    .back-link {
+      font-size: 14px;
+      color: var(--muted);
+      text-decoration: none;
+    }
+    .back-link:hover { color: var(--accent); }
+    @media (max-width: 480px) {
+      h1 { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="logo">sophyx<span>.</span></div>
+
+    <div class="check">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#2EC4B6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="20 6 9 17 4 12"/>
+      </svg>
+    </div>
+
+    <h1>You're in!</h1>
+    <p class="subtitle">Your spot is reserved for the free live webinar.<br>Here's everything you need to know.</p>
+
+    <div class="details-box">
+      <h3>Webinar Details</h3>
+      <div class="detail-row">
+        <div class="detail-icon">📅</div>
+        <div>
+          <div class="detail-label">Thursday, April 30, 2026</div>
+          <div class="detail-value">Recurring every Thursday</div>
+        </div>
+      </div>
+      <div class="detail-row">
+        <div class="detail-icon">🕑</div>
+        <div>
+          <div class="detail-label">2:00 PM EST</div>
+          <div class="detail-value">Approximately 45–60 minutes</div>
+        </div>
+      </div>
+      <div class="detail-row">
+        <div class="detail-icon">🔗</div>
+        <div>
+          <div class="detail-label">Join link coming soon</div>
+          <div class="detail-value">We'll email you the link before the session</div>
+        </div>
+      </div>
+      <div class="detail-row">
+        <div class="detail-icon">💸</div>
+        <div>
+          <div class="detail-label">Free — no catch</div>
+          <div class="detail-value">No credit card, no obligation</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="email-note">
+      <strong>Check your inbox.</strong> We'll send a reminder with your join link 24 hours and 1 hour before the webinar starts.
+    </div>
+
+    <div class="host-row">
+      <div class="host-photo">
+        <img src="claire-headshot.jpeg" alt="Claire Bouvier" />
+      </div>
+      <div>
+        <div class="host-name">Claire Bouvier</div>
+        <div class="host-title">Co-founder, Sophyx · AI Visibility Strategist</div>
+      </div>
+    </div>
+
+    <a href="https://clairebouv.github.io/sophyx-webinar" class="back-link">← Back to webinar page</a>
+  </div>
+</body>
+</html>
